@@ -24,25 +24,25 @@ public class TransactionOnServiceImplTest {
 	private TransactionOnService demoService;
 
 	@Test
-	@Transactional(value = "transactionManager")
-	// this transaction rolled back value="transactionManager"
+	@Transactional(value = "transactionManager")	
 	public void test_save() {
 
 		DemoData demoData = new DemoData();
-		demoData.setFirstName("firstName");
+		demoData.setFirstName("FirstName");
 		demoData.setLastName("LastName");
 		demoData.setCity("Chesterfield");
-		demoData.setName("name");
-		demoData.setMessage("test message from mary unit2");
+		demoData.setName("Name");
+		demoData.setMessage("Test message from Mary unit2");
 		demoService.save(demoData);
-		demoService.findByLastName("LastName");
-
+		List<String> foundData = demoService.findByLastName("LastName");
+		assertTrue(foundData.size() > 0);
+		assertTrue(foundData.get(0).length() == 36); //UUID length
 	}
 
 	@Test
 	@Transactional(value = "transactionManager", isolation = Isolation.READ_UNCOMMITTED)
 	// this will not wait for the lock
-	public void test_findByLastName_nomorewaitonlock() {
+	public void findByLastName_with_ReadUncommitted_then_noLock() {
 		List<String> foundData = demoService.findByLastName("Zheng");
 		assertTrue(foundData.size() > 0);
 	}

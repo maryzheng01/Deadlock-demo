@@ -20,17 +20,17 @@ public class TransactionOnServiceImpl implements TransactionOnService {
 	@Transactional(readOnly = false, isolation = Isolation.READ_UNCOMMITTED)
 	public void save(DemoData demoData) {
 
-		demoDao.insertData(demoData.getLastName(), demoData.getFirstName(),
-				demoData.getName(), demoData.getCity(), demoData.getMessage());
+		demoDao.insertData(demoData.getLastName(), demoData.getFirstName(), demoData.getName(), demoData.getCity(),
+				demoData.getMessage());
 
 		try {
-			System.out.println("Sleep for 30 seconds");
+			System.out.println("Save Service waits for 30 seconds");
 			Thread.sleep(30000);
 
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}// 30 seconds
+		} // 30 seconds
 
 	}
 

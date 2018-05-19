@@ -24,13 +24,11 @@ public class Db1DemoDaoTest {
 	public void test_findByName() {
 		List<String> dd = dao.findGuidsByLastname("zheng");
 		assertNotNull(dd);
-
 	}
 
 	@Test
 	@Transactional
 	public void test_findByGuids_PreparedQuery() {
-
 		dao.insertData("lastname", "firstname", "name", "city", "message");
 		List<String> dd = dao.findGuidsByLastname("lastname");
 		assertNotNull(dd);

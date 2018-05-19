@@ -12,8 +12,7 @@
 	    
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="db1DataSource"/>
-    </bean>
-    
+    </bean>    
   
     <jdbc:embedded-database id="db1DataSource" type="H2">
         <jdbc:script location="classpath:sql/db1.sql"/>
@@ -26,7 +25,6 @@
     
     <bean id="db1NamedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
         <constructor-arg ref="db1DataSource"/>
-    </bean>
-  
+    </bean>  
    
 </beans>

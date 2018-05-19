@@ -23,20 +23,17 @@ public class Db1DemoDaoImpl extends BaseDao implements Db1DemoDao {
 	public JdbcTemplate db1JdbcTemplate;
 
 	@Override
-	public void insertData(String lastname, String firstname, String name,
-			String city, String message) {
+	public void insertData(String lastname, String firstname, String name, String city, String message) {
 		insertData(lastname, firstname, name, city, message, db1JdbcTemplate);
-		
 	}
 
 	@Override
 	public List<String> findGuidsByLastname(String lastName) {
-		 return findGuidsByLastname(db1NamedParameterJdbcTemplate, lastName);
+		return findGuidsByLastname(db1NamedParameterJdbcTemplate, lastName);
 	}
 
 	@Override
 	public List<String> findGuidsByLastnameNoLock(String lastName) {
-		 
 		return findGuidsByLastnameWithNolock(db1NamedParameterJdbcTemplate, lastName);
 	}
 

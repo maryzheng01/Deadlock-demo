@@ -24,21 +24,20 @@ public class Db1DemoTransactionDaoImpl extends BaseDao implements Db1DemoTransac
 	public JdbcTemplate db1JdbcTemplate;
 
 	@Override
-	@Transactional(value="transactionManager", readOnly=false)
-	public void insertData(String lastname, String firstname, String name,
-			String city, String message) {
+	@Transactional(value = "transactionManager", readOnly = false)
+	public void insertData(String lastname, String firstname, String name, String city, String message) {
 		insertData(lastname, firstname, name, city, message, db1JdbcTemplate);
 	}
 
 	@Override
-	@Transactional(value="transactionManager", readOnly=true)
+	@Transactional(value = "transactionManager", readOnly = true)
 	public List<String> findGuidsByLastname(String lastName) {
-		 return findGuidsByLastname(db1NamedParameterJdbcTemplate, lastName);
+		return findGuidsByLastname(db1NamedParameterJdbcTemplate, lastName);
 	}
 
 	@Override
-	@Transactional(value="transactionManager", readOnly=true)
-	public List<String> findGuidsByLastnameNoLock(String lastName) {		 
+	@Transactional(value = "transactionManager", readOnly = true)
+	public List<String> findGuidsByLastnameNoLock(String lastName) {
 		return super.findGuidsByLastnameWithNolock(db1NamedParameterJdbcTemplate, lastName);
 	}
 
