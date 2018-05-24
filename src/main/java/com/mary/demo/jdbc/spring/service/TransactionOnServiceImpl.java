@@ -36,9 +36,7 @@ public class TransactionOnServiceImpl implements TransactionOnService {
 
 	@Transactional(readOnly = true)
 	public List<String> findByLastName(String lastName) {
-
-		return demoDao.findGuidsByLastname(lastName);
-		// return demoDao.findGuidsByLastnameNoLock(lastName);
+		return demoDao.findGuidsByLastname(lastName);	
 	}
 
 }

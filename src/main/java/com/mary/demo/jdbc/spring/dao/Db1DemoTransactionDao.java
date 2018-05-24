@@ -8,7 +8,5 @@ public interface Db1DemoTransactionDao {
     void insertData(String lastname, String firstname, String name, String city, String message);
     
     List<String> findGuidsByLastname(String lastName);
-    
-    List<String> findGuidsByLastnameNoLock(String lastName);
-                 
+                   
 }

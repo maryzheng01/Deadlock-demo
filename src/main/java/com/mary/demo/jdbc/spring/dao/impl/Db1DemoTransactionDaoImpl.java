@@ -36,10 +36,4 @@ public class Db1DemoTransactionDaoImpl extends BaseDao implements Db1DemoTransac
 		 return findGuidsByLastname(db1NamedParameterJdbcTemplate, lastName);
 	}
 
-	@Override
-	@Transactional(value="transactionManager", readOnly=true)
-	public List<String> findGuidsByLastnameNoLock(String lastName) {		 
-		return super.findGuidsByLastnameWithNolock(db1NamedParameterJdbcTemplate, lastName);
-	}
-
 }

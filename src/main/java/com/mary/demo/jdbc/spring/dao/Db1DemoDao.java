@@ -9,5 +9,4 @@ public interface Db1DemoDao {
     
     List<String> findGuidsByLastname(String lastName);
     
-    List<String> findGuidsByLastnameNoLock(String lastName);
 }
