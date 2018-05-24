@@ -34,10 +34,4 @@ public class Db1DemoDaoImpl extends BaseDao implements Db1DemoDao {
 		 return findGuidsByLastname(db1NamedParameterJdbcTemplate, lastName);
 	}
 
-	@Override
-	public List<String> findGuidsByLastnameNoLock(String lastName) {
-		 
-		return findGuidsByLastnameWithNolock(db1NamedParameterJdbcTemplate, lastName);
-	}
-
 }

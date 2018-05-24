@@ -37,17 +37,4 @@ public class BaseDao {
 		return ret;
 	}
 
-	public List<String> findGuidsByLastnameWithNolock(
-			NamedParameterJdbcTemplate namedParameterJdbcTemplate,
-			String lastName) {
-		System.out.println("start findGuidsByLastnameWithNolock");
-		String sqlIn = "   select   guid from demo_jdbc_type (nolock)  where lastName=:lastName ";
-
-		List<String> ret = namedParameterJdbcTemplate.queryForList(sqlIn,
-				Collections.singletonMap("lastName", lastName), String.class);
-		System.out.println("end findGuidsByLastnameWithNolock");
-		return ret;
-
-	}
-
 }
