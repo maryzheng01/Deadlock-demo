@@ -13,7 +13,4 @@
     <tx:annotation-driven transaction-manager="db2TransactionManager"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-   
-
-
 </beans>
